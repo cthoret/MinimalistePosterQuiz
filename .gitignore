@@ -1,0 +1,12 @@
+/app/config/parameters.yml
+/app/files/*
+/app/bootstrap*
+/app/cache/*
+/app/logs/*
+/bin/
+/vendor/
+/web/bundles/
+/web/css/compiled/
+/web/js/compiled/
+/web/upload/
+/composer.phar
