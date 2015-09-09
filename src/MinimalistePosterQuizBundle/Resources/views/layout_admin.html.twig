@@ -1,0 +1,96 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Back - Portfolio de Clément THORET{% endblock %}
+
+{% block meta %}
+  <!-- theme from : https://github.com/almasaeed2010/AdminLTE -->
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+{% endblock %}
+
+{% block stylesheets %}
+  {% stylesheets
+    'bundles/minimalisteposterquiz/lib/bootstrap/css/bootstrap.css'
+    'bundles/minimalisteposterquiz/lib/font-awesome/less/font-awesome.less'
+    'bundles/minimalisteposterquiz/lib/AdminLTE/less/AdminLTE.less'
+    'bundles/minimalisteposterquiz/lib/AdminLTE/less/skins/skin-black.less'
+    'bundles/minimalisteposterquiz/lib/iCheck/flat/blue.css'
+    'bundles/minimalisteposterquiz/lib/morris/morris.css'
+    'bundles/minimalisteposterquiz/lib/jvectormap/jquery-jvectormap-1.2.2.css'
+    'bundles/minimalisteposterquiz/lib/datepicker/datepicker3.css'
+    'bundles/minimalisteposterquiz/lib/daterangepicker/daterangepicker-bs3.css'
+    'bundles/minimalisteposterquiz/lib/bootstrap-wysihtml5/bootstrap3-wysihtml5.css'
+    filter='less' filter='?uglifycss' filter='cssrewrite' output='css/compiled/admin_all.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+  {% endstylesheets %}
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    {% stylesheets
+      'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js'
+      'https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js'
+      filter='?uglifyjs2' output='css/compiled/admin_IE_all.js' %}
+      <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+  <![endif]-->
+{% endblock stylesheets %}
+
+{% block javascriptsBody %}
+  {% javascripts
+    'bundles/minimalisteposterquiz/lib/jQuery/jQuery-2.1.3.min.js'
+    'bundles/minimalisteposterquiz/lib/bootstrap/js/bootstrap.js'
+    'http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js'
+    'bundles/minimalisteposterquiz/lib/morris/morris.js'
+    'bundles/minimalisteposterquiz/lib/sparkline/jquery.sparkline.js'
+    'bundles/minimalisteposterquiz/lib/jvectormap/jquery-jvectormap-1.2.2.min.js'
+    'bundles/minimalisteposterquiz/lib/jvectormap/jquery-jvectormap-world-mill-en.js'
+    'bundles/minimalisteposterquiz/lib/knob/jquery.knob.js'
+    'bundles/minimalisteposterquiz/lib/daterangepicker/daterangepicker.js'
+    'bundles/minimalisteposterquiz/lib/datepicker/bootstrap-datepicker.js'
+    'bundles/minimalisteposterquiz/lib/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'
+    'bundles/minimalisteposterquiz/lib/iCheck/icheck.js'
+    'bundles/minimalisteposterquiz/lib/slimScroll/jquery.slimscroll.js'
+    'bundles/minimalisteposterquiz/lib/fastclick/fastclick.js'
+    'bundles/minimalisteposterquiz/lib/AdminLTE/js/app.js'
+    filter='?uglifyjs2' output='js/compiled/admin_all.js' %}
+    <script src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+{% endblock javascriptsBody %}
+
+
+{% block body %}
+  <div class="wrapper">
+    {{ include('MinimalistePosterQuizBundle:Admin/Default:_top_bar.html.twig') }}
+    {{ include('MinimalistePosterQuizBundle:Admin/Default:_side_bar.html.twig') }}
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+      {% block breadcrumb %}
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            {% block breadcrumbTitle %}
+              Dashboard
+              <small>Control panel</small>
+            {% endblock %}
+          </h1>
+          <ol class="breadcrumb">
+            {% block breadcrumbLink %}
+              <li><a href="{{ path('minimaliste_poster_quiz_admin_default') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+              <li class="active">Dashboard</li>
+            {% endblock breadcrumbLink %}
+          </ol>
+        </section>
+      {% endblock breadcrumb %}
+
+      <!-- Main content -->
+      <section class="content">
+        {% block bodycontent %}{% endblock %}
+      </section><!-- /.content -->
+
+    </div><!-- /.content-wrapper -->
+
+    {{ include('MinimalistePosterQuizBundle:Admin/Default:_footer.html.twig') }}
+  </div><!-- ./wrapper -->
+{% endblock body %}

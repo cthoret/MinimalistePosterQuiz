@@ -1,0 +1,3 @@
+minimaliste_poster_quiz_admin_default:
+    path:     /
+    defaults: { _controller: MinimalistePosterQuizBundle:Admin/Default:default }

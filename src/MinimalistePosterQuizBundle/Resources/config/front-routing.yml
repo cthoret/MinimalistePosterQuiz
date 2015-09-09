@@ -1,0 +1,3 @@
+minimaliste_poster_quiz_front_default:
+    resource: "@MinimalistePosterQuizBundle/Resources/config/front/default-routing.yml"
+    prefix:   /

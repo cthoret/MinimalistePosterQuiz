@@ -1,0 +1,3 @@
+minimaliste_poster_quiz_homepage:
+    path:     /
+    defaults: { _controller: MinimalistePosterQuizBundle:Default:index }

@@ -1,3 +1,7 @@
-minimaliste_poster_quiz_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: MinimalistePosterQuizBundle:Default:index }
+minimaliste_poster_quiz_admin:
+    resource: "@MinimalistePosterQuizBundle/Resources/config/admin-routing.yml"
+    prefix:   /admin
+
+minimaliste_poster_quiz_front:
+    resource: "@MinimalistePosterQuizBundle/Resources/config/front-routing.yml"
+    prefix:   /
